@@ -8,3 +8,4 @@ public class Kata3 implements InvocationCounter {
 		return 2*count;
 	}
 }
+
