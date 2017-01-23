@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.kinbiko.java.kata;
 
 public class Kata1 {
