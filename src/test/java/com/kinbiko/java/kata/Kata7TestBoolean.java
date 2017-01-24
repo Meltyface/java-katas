@@ -41,7 +41,7 @@ public class Kata7TestBoolean extends Kata7Test {
         assertFalse(target.doPrimitiveBooleanAnd(true, false));
         assertFalse(target.doPrimitiveBooleanAnd(false, false));
     }
-
+    
     @Test
     public void testObjectBoolean(){
         assertFalse(target.flipObjectBoolean(Boolean.TRUE));
@@ -49,7 +49,9 @@ public class Kata7TestBoolean extends Kata7Test {
         assertNull(target.flipObjectBoolean(null));
 
         //Or operator
-        assertTrue(target.doObjectBooleanOr(Boolean.TRUE, Boolean.TRUE));
+        Boolean NPEAvoidance = target.doObjectBooleanOr(Boolean.TRUE, Boolean.TRUE);
+		System.out.println(NPEAvoidance);
+        assertTrue(NPEAvoidance);
         assertTrue(target.doObjectBooleanOr(Boolean.FALSE, Boolean.TRUE));
         assertTrue(target.doObjectBooleanOr(Boolean.TRUE, Boolean.FALSE));
         assertFalse(target.doObjectBooleanOr(Boolean.FALSE, Boolean.FALSE));

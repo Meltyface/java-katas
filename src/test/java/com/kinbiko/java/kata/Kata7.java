@@ -6,51 +6,25 @@ public class Kata7 {
 	}
 	
 	public boolean doPrimitiveBooleanOr(boolean arg1, boolean arg2) {
-		if (arg1 || arg2 == true) {
-			return true;
-		} else {
-			return false;
-		}
+		return arg1 || arg2;
 	}
 	
 	public boolean doPrimitiveBooleanAnd(boolean arg1, boolean arg2) {
-		if (arg1 && arg2 == true) {
-			return true; 
-		} else {
-			return false;
-		}
+		return arg1 && arg2;
 	}
 	
 	public Boolean flipObjectBoolean(Boolean arg) {
-		if (arg == null) {
-			return null;
-		} else {
-			return !arg;
-		}
+		return arg == null ? null : !arg;
 	}
 	
 	public Boolean doObjectBooleanOr(Boolean arg1, Boolean arg2) {
-		if (arg1 || arg2 == null) {
-			return null;
-		} else {
-			if (Boolean.TRUE.equals(arg1) || Boolean.TRUE.equals(arg2)) {
-				return Boolean.TRUE;
-			} else {
-				return Boolean.FALSE;
-			}
-		}
+		return (arg1 == null) || (arg2 == null) ? null : 
+			doPrimitiveBooleanOr(arg1, arg2);
 	}
 	
 	public Boolean doObjectBooleanAnd(Boolean arg1, Boolean arg2) {
-		if (arg1 || arg2 == null) {
-			return null;
-		} else {
-			if (Boolean.TRUE.equals(arg1) && Boolean.TRUE.equals(arg2)) {
-				return Boolean.TRUE;
-			} else {
-				return Boolean.FALSE;
-			}		
-		}
+		return (arg1 == null) || (arg2 == null) ? null : 
+			doPrimitiveBooleanAnd(arg1, arg2);
 	}
 	
 	public int doPrimitiveIntegerAdd(int A, int B) {
@@ -70,7 +44,7 @@ public class Kata7 {
 	}
 	
 	public Integer doObjectIntegerAdd(Integer A, Integer B) {
-		if (A || B == null) {
+		if (A == null || B == null) {
 			return null;
 		} else {
 			return A + B;
@@ -78,7 +52,7 @@ public class Kata7 {
 	}
 	
 	public Integer doObjectIntegerSubtract(Integer A, Integer B) {
-		if (A || B == null) {
+		if (A == null || B == null) {
 			return null;
 		} else {
 			return A - B;
@@ -86,7 +60,7 @@ public class Kata7 {
 	}
 	
 	public Integer doObjectIntegerMultiply(Integer A, Integer B) {
-		if (A || B == null) {
+		if (A == null || B == null) {
 			return null;
 		} else {
 			return A * B;
@@ -94,7 +68,7 @@ public class Kata7 {
 	}
 	
 	public Integer doObjectIntegerDivide(Integer A, Integer B) {
-		if (A || B == null) {
+		if (A == null || B == null) {
 			return null;
 		} else {
 			return A / B;
