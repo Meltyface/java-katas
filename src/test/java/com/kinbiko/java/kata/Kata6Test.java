@@ -2,6 +2,7 @@ package com.kinbiko.java.kata;
 
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 /**
@@ -51,8 +52,11 @@ public class Kata6Test {
         assertTrue(excp.getClass().getName().contains("com.kinbiko.java.kata."));
     }
 
-    @Test public void testHandlesCheckedExceptions(){
-        final Exception excp = target.handlingExceptions("unchecked");
+    @Test 
+    public void testHandlesCheckedExceptions(){
+        final Exception excp = target.handlingExceptions("checked");
+        assertTrue(excp.getClass().getName().contains("com.kinbiko.java.kata."));
+        assertFalse(excp instanceof RuntimeException);
     }
 
 
